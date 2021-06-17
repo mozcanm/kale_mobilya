@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="KaleMobilya">
+  <DataContextMoniker Name="/KaleMobilyaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="93296fb3-c58e-4d5c-9dae-375c17d35dcc" absoluteBounds="0.5, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/KaleMobilyaDataContext/Cari" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dffef1d6-7d48-470c-b0c3-d6c91d9b646f" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4073654-f6f7-47c2-92f5-c7b51785dfc3" absoluteBounds="4.375, 1, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/KaleMobilyaDataContext/Durum" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57e2dcf5-f995-4c84-9471-27daaaf689a5" absoluteBounds="4.39, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.375 : 1.59699625651042); (2.5 : 1.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KaleMobilyaDataContext/Durum/Durum_Cari" />
+      <nodes>
+        <classShapeMoniker Id="c4073654-f6f7-47c2-92f5-c7b51785dfc3" />
+        <classShapeMoniker Id="93296fb3-c58e-4d5c-9dae-375c17d35dcc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a0404f35-0647-4efd-a07d-a9def92c52e6" absoluteBounds="0.5, 3.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/KaleMobilyaDataContext/Kisi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5aaef60a-a2ac-4854-96a3-9cee8c2cb0e8" absoluteBounds="0.51500000000000012, 3.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 3.375); (1.5 : 2.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KaleMobilyaDataContext/Kisi/Kisi_Cari" />
+      <nodes>
+        <classShapeMoniker Id="a0404f35-0647-4efd-a07d-a9def92c52e6" />
+        <classShapeMoniker Id="93296fb3-c58e-4d5c-9dae-375c17d35dcc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d2f637a9-0b0b-4a47-b3dd-efaeda91dda7" absoluteBounds="4.375, 3.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/KaleMobilyaDataContext/Senet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c044571-ba46-4e83-ba85-50441b4982fb" absoluteBounds="4.39, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 4.26044840494792); (4.375 : 4.26044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KaleMobilyaDataContext/Kisi/Kisi_Senet" />
+      <nodes>
+        <classShapeMoniker Id="a0404f35-0647-4efd-a07d-a9def92c52e6" />
+        <classShapeMoniker Id="d2f637a9-0b0b-4a47-b3dd-efaeda91dda7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

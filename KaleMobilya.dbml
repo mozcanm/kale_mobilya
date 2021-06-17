@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KaleMobilya" Class="KaleMobilyaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=Casper\SQLEXPRESS;Initial Catalog=KaleMobilya;Integrated Security=True" SettingsObjectName="Kale_Mobilya.Properties.Settings" SettingsPropertyName="KaleMobilyaConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cari" Member="Caris">
+    <Type Name="Cari">
+      <Column Name="CariID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KisiID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DurumID" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Tarih" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="Durum_Cari" Member="Durum" ThisKey="DurumID" OtherKey="DurumID" Type="Durum" IsForeignKey="true" />
+      <Association Name="Kisi_Cari" Member="Kisi" ThisKey="KisiID" OtherKey="KisiID" Type="Kisi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Durum" Member="Durums">
+    <Type Name="Durum">
+      <Column Name="DurumID" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Durumlar" Type="System.String" DbType="NVarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Durum_Cari" Member="Caris" ThisKey="DurumID" OtherKey="DurumID" Type="Cari" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kisi" Member="Kisis">
+    <Type Name="Kisi">
+      <Column Name="KisiID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ad" Type="System.String" DbType="NVarChar(31)" CanBeNull="true" />
+      <Column Name="Firma" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="Tel1" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Tel2" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Karaliste" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Kisi_Cari" Member="Caris" ThisKey="KisiID" OtherKey="KisiID" Type="Cari" />
+      <Association Name="Kisi_Senet" Member="Senets" ThisKey="KisiID" OtherKey="KisiID" Type="Senet" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Senet" Member="Senets">
+    <Type Name="Senet">
+      <Column Name="SenetID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KisiID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SeriNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VadeTarihi" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Banka" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Kisi_Senet" Member="Kisi" ThisKey="KisiID" OtherKey="KisiID" Type="Kisi" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
